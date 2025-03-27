@@ -116,8 +116,8 @@ resource "aws_eks_node_group" "devopsshack" {
   }
 }
 
-resource "aws_iam_role" "devopsshack_cluster_role" {
-  name = "devopsshack-cluster-role"
+resource "aws_iam_role" "devopsshack_cluster_role12" {
+  name = "devopsshack-cluster-role12"
 
   assume_role_policy = <<EOF
 {
@@ -135,13 +135,13 @@ resource "aws_iam_role" "devopsshack_cluster_role" {
 EOF
 }
 
-resource "aws_iam_role_policy_attachment" "devopsshack_cluster_role_policy" {
-  role       = aws_iam_role.devopsshack_cluster_role.name
+resource "aws_iam_role_policy_attachment" "devopsshack_cluster_role_policy12" {
+  role       = aws_iam_role.devopsshack_cluster_role12.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
 }
 
-resource "aws_iam_role" "devopsshack_node_group_role" {
-  name = "devopsshack-node-group-role"
+resource "aws_iam_role" "devopsshack_node_group_role12" {
+  name = "devopsshack-node-group-role12"
 
   assume_role_policy = <<EOF
 {
@@ -159,17 +159,17 @@ resource "aws_iam_role" "devopsshack_node_group_role" {
 EOF
 }
 
-resource "aws_iam_role_policy_attachment" "devopsshack_node_group_role_policy" {
-  role       = aws_iam_role.devopsshack_node_group_role.name
+resource "aws_iam_role_policy_attachment" "devopsshack_node_group_role_policy12" {
+  role       = aws_iam_role.devopsshack_node_group_role12.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
 }
 
-resource "aws_iam_role_policy_attachment" "devopsshack_node_group_cni_policy" {
-  role       = aws_iam_role.devopsshack_node_group_role.name
+resource "aws_iam_role_policy_attachment" "devopsshack_node_group_cni_policy12" {
+  role       = aws_iam_role.devopsshack_node_group_role12.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
 }
 
-resource "aws_iam_role_policy_attachment" "devopsshack_node_group_registry_policy" {
-  role       = aws_iam_role.devopsshack_node_group_role.name
+resource "aws_iam_role_policy_attachment" "devopsshack_node_group_registry_policy12" {
+  role       = aws_iam_role.devopsshack_node_group_role12.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
 }
